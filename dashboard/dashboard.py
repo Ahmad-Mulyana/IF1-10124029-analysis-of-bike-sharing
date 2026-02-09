@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import os
 
 st.set_page_config(page_title="Dashboard Penyewaan Sepeda", layout="wide")
 
@@ -104,7 +105,11 @@ st.caption("Filter di sidebar akan mengubah tabel & grafik secara real-time.")
 # =========================
 # Pilih dataset
 # =========================
-dataset = st.sidebar.selectbox("Pilih Dataset", ["day.csv", "hour.csv"])
+dataset = st.sidebar.selectbox(
+    "Pilih Dataset",
+    ["./data/day.csv", "./data/hour.csv"],
+    format_func=lambda x: os.path.basename(x) 
+)
 df = load_csv(dataset)
 
 # =========================
@@ -166,7 +171,7 @@ st.markdown("---")
 # =========================
 # Load clustering results (hasil tim analisis)
 # =========================
-CLUSTER_PATH = "bike_final_model_ready.csv"
+CLUSTER_PATH = "./data/bike_final_model_ready.csv"
 
 try:
     df_cluster_day = load_cluster_csv(CLUSTER_PATH)
@@ -174,7 +179,7 @@ try:
     df_cluster_day_f = apply_filters(df_cluster_day, date_range, selected_seasons, selected_weathers)
 
     # kalau user pilih hour.csv, cluster harian diwariskan ke hour via join dteday
-    if dataset == "hour.csv":
+    if dataset == "./data/hour.csv":
         df_cluster = attach_daily_cluster_to_hour(df_f, df_cluster_day_f)
     else:
         df_cluster = df_cluster_day_f.copy()
