@@ -90,21 +90,24 @@ Dataset hasil analisis:
 further-analysis-of-bike-sharing/
 │
 ├── dashboard/
-│   └── dashboard.py              # Aplikasi dashboard Streamlit
+│   └── dashboard.py                         # Aplikasi dashboard Streamlit
 │
 ├── data/
-│   ├── bike_final_model_ready.csv # Dataset hasil clustering
-│   ├── day.csv                    # Dataset harian
-│   └── hour.csv                   # Dataset per jam
+│   ├── bike_final_model_ready.csv           # Dataset hasil clustering
+│   ├── day.csv                              # Dataset harian
+│   └── hour.csv                             # Dataset per jam
 │
 ├── notebook/
-│   └── k-means.py                 # Analisis & clustering data
+│   └── k-means.py                           # Script analisis & clustering
 │
-└── README.md                      # Dokumentasi proyek
+├── Laporan Analisis Lanjutan Bike-sharing.pdf  # Laporan proyek (PDF)
+├── requirements.txt                         # Daftar library Python
+└── README.md                                # Dokumentasi proyek
 ```
 
-Struktur folder ini memisahkan komponen analisis, dataset, dan dashboard
-agar proyek lebih terorganisir dan mudah dipahami.
+Struktur folder ini memisahkan komponen analisis, dataset, dashboard,
+dan dokumentasi agar proyek lebih terorganisir serta mudah dipahami.
+
 
 ---
 
