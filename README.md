@@ -87,15 +87,24 @@ Dataset hasil analisis:
 ## Struktur Folder
 
 ```
-.
-├── dashboard.py                 # Dashboard Streamlit
-├── pdsd.py                      # Analisis & clustering data
-├── day.csv
-├── hour.csv
-├── bike_final_model_ready.csv
-├── requirements.txt
-└── README.md
+further-analysis-of-bike-sharing/
+│
+├── dashboard/
+│   └── dashboard.py              # Aplikasi dashboard Streamlit
+│
+├── data/
+│   ├── bike_final_model_ready.csv # Dataset hasil clustering
+│   ├── day.csv                    # Dataset harian
+│   └── hour.csv                   # Dataset per jam
+│
+├── notebook/
+│   └── k-means.py                 # Analisis & clustering data
+│
+└── README.md                      # Dokumentasi proyek
 ```
+
+Struktur folder ini memisahkan komponen analisis, dataset, dan dashboard
+agar proyek lebih terorganisir dan mudah dipahami.
 
 ---
 
